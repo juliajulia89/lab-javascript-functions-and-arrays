@@ -17,26 +17,53 @@ function findLongestWord(word) {
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers(a) {
-   if (a.length === 0) {
-    return 0; 
+function sumNumbers(number) {
+  if (number.length === 0) {
+    return 0;
   }
-  
+
   let sum = 0;
-  for (let i = 0; i < a.length; i++) {
-    sum += a[i];
+  for (let i = 0; i < number.length; i++) {
+    sum += number[i];
   }
   return sum;
 }
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+function sum(array) {
+  if (array.length === 0) {
+    return 0;
+  }
+  let totalSum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === 'number') {
+      totalSum += array[i];
+    } else if (typeof array[i] === 'string') {
+      totalSum += array[i].length;
+    } else if (typeof array[i] === 'boolean') {
+      if (array[i] === true) totalSum += 1;
+    } else {
+      throw Error("Unsupported data type sir or ma'am");
+    }
+  }
+  return totalSum;
+}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-
-function averageNumbers() {}
+function averageNumbers(number) {
+  if (number.length === 0) {
+    return null;
+  }
+  let sum = 0;
+  for (let i = 0; i < number.length; i++) {
+    sum += number[i];
+  }
+  let averageSum = sum / number.length;
+  return averageSum;
+}
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
